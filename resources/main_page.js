@@ -27,16 +27,16 @@ Nestor.mainPage = SC.Page.design({
 				sortKey: 'pos',
 				theme: 'square',
 				objects: [
-					{title:'Rechercher un dossier', value: 'search', pos: 1},
-					{title:'Nouveau dossier', value: 'create', pos: 2},
-					{title:'Comptabilité', value: 'accounting', pos: 3}
+					{title:'_searchFile'.loc(), value: 'search', pos: 1},
+					{title:'_createFile'.loc(), value: 'create', pos: 2},
+					{title:'_accounting'.loc(), value: 'accounting', pos: 3}
 				]
 			}),
 
 			titleView: SC.LabelView.design({
 				layout: { centerY: 0, centerX: 0, width: 100, height: 24 },
 				fontWeight: SC.BOLD_WEIGHT,
-				value: "NESTOR"
+				value: "_appTitle".loc()
 			}),
 
 			userView: SC.LabelView.design({

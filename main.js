@@ -23,8 +23,8 @@ Nestor.main = function main() {
   // This will make your app come alive!
 
   // TODO: Set the content property on your primary controller
-  // ex: Nestor.contactsController.set('content',Nestor.contacts);
-
+  var files = Nestor.store.find(Nestor.File);
+	Nestor.filesController.set('content', files);  
 } ;
 
 function main() { Nestor.main(); }

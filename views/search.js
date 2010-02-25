@@ -23,12 +23,18 @@ Nestor.SearchView = SC.SplitView.design({
 		columns: [
 			SC.TableColumn.create({
 				key:   'name',
-				label: 'Nom',
+				label: '_name'.loc(),
 				width: 500
 			}),
 			SC.TableColumn.create({
 				key:   'managerName',
-				label: 'Gestionnaire',
+				label: '_manager'.loc(),
+				width: 200,
+				minWidth: 150
+			}),
+			SC.TableColumn.create({
+				key:   'grantDate',
+				label: '_grantDate'.loc(),
 				width: 200,
 				minWidth: 150
 			})

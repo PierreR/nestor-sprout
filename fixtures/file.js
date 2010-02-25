@@ -7,18 +7,25 @@
 sc_require('models/file');
 
 Nestor.File.FIXTURES = [
+	{
+		guid: 1,
+		name: "File-1",
+		managerName: "Michael",
+		grantDate: SC.DateTime.create()
+	},
 
+	{ 
+		guid: 2,
+		name: "File-2",
+		managerName: "Dwight",
+		grantDate: SC.DateTime.create()
+	},
 
-  { guid: 1,
-    managerName: "Michael",
-    grantDate: SC.DateTime.create()},
-  
-  { guid: 2,
-    managerName: "Dwight",
-    grantDate: SC.DateTime.create() },
-  
-  { guid: 3,
-    managerName: "Jim",
-    grantDate: SC.DateTime.create() }
+	{ 
+		guid: 3,
+		name: "File-3",
+		managerName: "Jim",
+		grantDate: SC.DateTime.create()
+	}
 
-];
+	];
