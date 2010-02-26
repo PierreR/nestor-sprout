@@ -13,18 +13,29 @@
 Nestor.SearchView = SC.SplitView.design({
 	/** @scope Nestor.SearchView.prototype */ 
 
-	 // TODO: Add your own code here.
 	hasHorizontalScroller: NO,
-	layout: { top: 36, bottom: 32, left: 0, right: 0 },
-	backgroundColor: 'white',
+	// layout: { top: 36, bottom: 36, left: 0, right: 0 },
+	// backgroundColor: 'white',
 	defaultThickness: 0.2,
+	dividerThickness: 5,
 	layoutDirection: SC.LAYOUT_VERTICAL,
+	topLeftView: SC.View.design({
+		// backgroundColor: 'grey',
+		childViews: 'nameLabelView nameFieldView'.w(),
+		nameLabelView:SC.LabelView.design({
+			// layout: { top: 3, bottom: 32, left: 0, right: 0 },	
+			value: '_name'.loc()
+		}),
+		nameFieldView: SC.TextFieldView.design({
+			layout: { centerY: 0, height: 24, left: 8, width: 100 },
+		})
+	}),
 	bottomRightView: SC.TableView.design({
 		columns: [
 			SC.TableColumn.create({
 				key:   'name',
 				label: '_name'.loc(),
-				width: 500
+				width: 200
 			}),
 			SC.TableColumn.create({
 				key:   'managerName',

@@ -10,8 +10,8 @@
 // localized string added to this file!
 //
 SC.stringsFor('fr', {
-	'_SC.DateTime.shortDate': '%m.%d.%Y', 
-	'_SC.DateTime.mediumDate': '%M %d, %Y', 
+	'_Nestor.DateTime.defaultShortDateFormat': '%m.%d.%Y', 
+	'_Nestor.DateTime.defaultMediumDateFormat': '%M %d, %Y', 
 	'_loading': "Chargement",
 	'_appTitle': "NESTOR 0.1",
 	'_searchFile': "Rechercher un dossier",
