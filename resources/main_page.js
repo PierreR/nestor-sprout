@@ -57,10 +57,10 @@ Nestor.mainPage = SC.Page.design({
 			})
 		}),
 	  
-		middleView: SC.WellView.design({
+		middleView: SC.ContainerView.design({
 			// nowShowingBinding: 'Nestor.middleContainerController.nowShowing',
 			nowShowingBinding: 'Nestor.mainPage.mainPane.topView.leftActions.value',
-      contentLayout: { left: 0, top: 36, bottom: 36, right: 0 }
+			layout: { left: 0, top: 36, bottom: 36, right: 0 }
 		}),
 
 		bottomView: SC.ToolbarView.design({
