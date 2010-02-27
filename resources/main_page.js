@@ -19,26 +19,15 @@ Nestor.mainPage = SC.Page.design({
 			childViews: 'leftActions titleView userView rightActions'.w(),
 			anchorLocation: SC.ANCHOR_TOP,
 			// TODO: Replace with a SelectView whenever that works ...
-			leftActions:SC.SelectButtonView.design({
-				layout: { centerY: 0, width: 220, height: 24, left: 1 },
-				value: 'searchContainer',
-				// itemTitleKey: 'title',
-				nameKey: 'title',
-				// positionMenuBelow: Yes,
-				isDefaultPosition: YES,
-				// itemValueKey:'value',
-				valueKey: 'value',
-				// itemSortKey: 'pos',
-				sortKey: 'pos',
-				theme: 'square',
-				// items: [
-				objects: [
-					{title:'_searchFile'.loc(), value: 'searchContainer', pos: 1},
-					{title:'_createFile'.loc(), value: 'createFileContainer', pos: 2},
-					{title:'_accounting'.loc(), value: 'accountingContainer', pos: 3}
-				]
+			leftActions: SC.SegmentedView.design({
+				layout: { centerY: 0,  height: 24, width: 300, left: 1 },
+				itemTitleKey: 'title', itemValueKey: 'value',
+				items: [
+					{ title: '_search'.loc(), value: 'searchContainer' }, 
+					{ title: '_create'.loc(), value: 'createContainer' },
+					{ title: '_accounting'.loc(), value: 'accountingContainer' }
+			 	]
 			}),
-
 			titleView: SC.LabelView.design({
 				layout: { centerY: 0, centerX: 0, width: 100, height: 24 },
 				fontWeight: SC.BOLD_WEIGHT,
