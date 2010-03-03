@@ -48,7 +48,7 @@ Nestor.mainPage = SC.Page.design({
           canReorderContent: NO,
           canDeleteContent: NO,
 					canEditContent: NO,
-          // hasContentIcon: YES,
+          hasContentIcon: NO,
           // contentIconKey:  'icon'
 					// action: 'selectTarget'
 				})
