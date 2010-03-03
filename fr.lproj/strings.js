@@ -10,14 +10,14 @@
 // localized string added to this file!
 //
 SC.stringsFor('fr', {
-	'_Nestor.DateTime.defaultShortDateFormat': '%m.%d.%Y', 
 	'_Nestor.DateTime.defaultMediumDateFormat': '%M %d, %Y', 
-	'_loading': "Chargement",
+	'_Nestor.DateTime.defaultShortDateFormat': '%m.%d.%Y', 
 	'_appTitle': "NESTOR 0.1",
-	'_search': "Rechercher",
-	'_create': "Créer",
 	'_accounting': "Comptabilité",
+	'_create': "Créer",
 	'_grantDate': "Date d'octroi",
+	'_loading': "Chargement",
 	'_manager': "Gestionnaire",
-	'_name': "Nom"
+	'_name': "Nom",
+	'_search': "Rechercher"
 	}) ;

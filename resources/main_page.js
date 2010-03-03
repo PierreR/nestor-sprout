@@ -12,22 +12,12 @@ Nestor.mainPage = SC.Page.design({
 	// load.
 	mainPane: SC.MainPane.design({
 
-		childViews: 'middleView topView bottomView'.w(),
+		childViews: 'topBarView middleView bottomBarView'.w(),
 
-		topView: SC.ToolbarView.design({
+		topBarView: SC.ToolbarView.design({
 			layout: { top: 0, left: 0, right: 0, height: 36 },
-			childViews: 'leftActions titleView userView rightActions'.w(),
+			childViews: 'titleView userView rightActions'.w(),
 			anchorLocation: SC.ANCHOR_TOP,
-			// TODO: Replace with a SelectView whenever that works ...
-			leftActions: SC.SegmentedView.design({
-				layout: { centerY: 0,  height: 24, width: 300, left: 1 },
-				itemTitleKey: 'title', itemValueKey: 'value',
-				items: [
-					{ title: '_search'.loc(), value: 'searchContainer' }, 
-					{ title: '_create'.loc(), value: 'createContainer' },
-					{ title: '_accounting'.loc(), value: 'accountingContainer' }
-			 	]
-			}),
 			titleView: SC.LabelView.design({
 				layout: { centerY: 0, centerX: 0, width: 100, height: 24 },
 				fontWeight: SC.BOLD_WEIGHT,
@@ -46,22 +36,31 @@ Nestor.mainPage = SC.Page.design({
 			})
 		}),
 	  
-		middleView: SC.ContainerView.design({
-			// nowShowingBinding: 'Nestor.middleContainerController.nowShowing',
-			nowShowingBinding: 'Nestor.mainPage.mainPane.topView.leftActions.value',
-			layout: { left: 0, top: 36, bottom: 36, right: 0 }
+		middleView: SC.SplitView.design({
+			layout: { left: 0, top: 36, bottom: 36, right: 0 },
+			defaultThickness: 0.2,
+			topLeftView: SC.View.design({
+				childViews: 'fileMenu'.w(),
+				fileMenu: SC.SourceListView.design({
+          contentBinding: "Nestor.contextMenuController.arrangedObjects",
+          selectionBinding: "Nestor.contextMenuController.selection",
+          contentValueKey: "displayName",
+          canReorderContent: NO,
+          canDeleteContent: NO,
+					canEditContent: NO,
+          // hasContentIcon: YES,
+          // contentIconKey:  'icon'
+					// action: 'selectTarget'
+				})
+			}),
+			bottomRightView: SC.View.design({
+			})
 		}),
 
-		bottomView: SC.ToolbarView.design({
+		bottomBarView: SC.ToolbarView.design({
 			layout: { bottom: 0, left: 0, right: 0, height: 36 },
 			anchorLocation: SC.ANCHOR_BOTTOM
 		})
-	}),  
-	
-	searchContainer: Nestor.SearchView,
-	createFileContainer: SC.View.design({
-		backgroundColor: 'white'
-		
-	})
+	})  
 
 });
