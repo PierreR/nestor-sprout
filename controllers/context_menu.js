@@ -13,25 +13,26 @@
 Nestor.contextMenuController = SC.TreeController.create(
 /** @scope Nestor.contextMenuController.prototype */ {
 
+	 content: null,
   // TODO: Add your own code here. 
-	content: SC.Object.create({
-		isExpanded: YES, 
-		children:  [
-			SC.Object.create({
-				displayName: "Dossier", 
-				// isEspanded: YES,
-				children: [
-					SC.Object.create({
-						displayName: "Create"
-					})
-				]
-			}),
-			SC.Object.create({displayName: "Projet"})
-		]
-	}),
+	// content: SC.Object.create({
+	// 	isExpanded: YES, 
+	// 	children:  [
+	// 		SC.Object.create({
+	// 			title: "Dossier", 
+	// 			isEspanded: YES,
+	// 			children: [
+	// 				SC.Object.create({
+	// 					title: "Create"
+	// 				})
+	// 			]
+	// 		}),
+	// 	SC.Object.create({title: "Projet"})
+	// ]
+	// }),
 
-	treeItemChildrenKey: "children",
-  treeItemIsExpandedKey: "isExpanded",
+	// treeItemChildrenKey: "children",
+  // treeItemIsExpandedKey: "isExpanded",
   treeItemIsGrouped: YES,
   
   allowsMultipleSelection: NO,

@@ -15,9 +15,12 @@ SC.stringsFor('fr', {
 	'_appTitle': "NESTOR 0.1",
 	'_accounting': "Comptabilité",
 	'_create': "Créer",
+	'_file': "Dossier",
 	'_grantDate': "Date d'octroi",
 	'_loading': "Chargement",
 	'_manager': "Gestionnaire",
 	'_name': "Nom",
+	'_project': "Project",
+	'_publicOperation': "Opération publique",
 	'_search': "Rechercher"
 	}) ;

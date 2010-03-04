@@ -25,6 +25,13 @@ Nestor.main = function main() {
   // TODO: Set the content property on your primary controller
   var files = Nestor.store.find(Nestor.File);
 	Nestor.filesController.set('content', files);  
+
+	// init static data
+	var treeContent = Nestor.contextMenu(['_file', ['_search', '_create', '_accounting'] ,'_project', ['_publicOperation', 'PPP']]);
+	console.info(treeContent);
+	treeContent.treeItemChildren[0].treeItemIsExpanded = YES;
+	Nestor.contextMenuController.set('content', treeContent) ;
+
 } ;
 
 function main() { Nestor.main(); }

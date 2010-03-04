@@ -44,11 +44,11 @@ Nestor.mainPage = SC.Page.design({
 				fileMenu: SC.SourceListView.design({
           contentBinding: "Nestor.contextMenuController.arrangedObjects",
           selectionBinding: "Nestor.contextMenuController.selection",
-          contentValueKey: "displayName",
+          contentValueKey: 'title',
           canReorderContent: NO,
           canDeleteContent: NO,
 					canEditContent: NO,
-          hasContentIcon: NO,
+          hasContentIcon: NO
           // contentIconKey:  'icon'
 					// action: 'selectTarget'
 				})
