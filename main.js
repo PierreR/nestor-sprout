@@ -12,7 +12,7 @@
 // See comments for some pointers on what to do next.
 //
 Nestor.main = function main() {
-
+	var files, contextMenu, menuRoot;
   // Step 1: Instantiate Your Views
   // The default code here will make the mainPane for your application visible
   // on screen.  If you app gets any level of complexity, you will probably 
@@ -22,15 +22,17 @@ Nestor.main = function main() {
   // Step 2. Set the content property on your primary controller.
   // This will make your app come alive!
 
-  // TODO: Set the content property on your primary controller
-  var files = Nestor.store.find(Nestor.File);
+  files = Nestor.store.find(Nestor.File);
 	Nestor.filesController.set('content', files);  
 
 	// init static data
-	var treeContent = Nestor.contextMenu(['_file', ['_search', '_create', '_accounting'] ,'_project', ['_publicOperation', 'PPP']]);
-	console.info(treeContent);
-	treeContent.treeItemChildren[0].treeItemIsExpanded = YES;
-	Nestor.contextMenuController.set('content', treeContent) ;
+	contextMenu = Nestor.store.find(Nestor.ContextMenu).toArray();
+	menuRoot = SC.Object.create(SC.TreeItemContent, {
+		 treeItemIsGrouped: YES,
+		 treeItemChildren: contextMenu		 
+	}); 
+	console.info(contextMenu);
+	Nestor.contextMenuController.set('content', menuRoot) ;
 
 } ;
 

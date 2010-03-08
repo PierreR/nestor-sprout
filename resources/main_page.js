@@ -44,7 +44,7 @@ Nestor.mainPage = SC.Page.design({
 				fileMenu: SC.SourceListView.design({
           contentBinding: "Nestor.contextMenuController.arrangedObjects",
           selectionBinding: "Nestor.contextMenuController.selection",
-          contentValueKey: 'title',
+          contentValueKey: 'displayName',
           canReorderContent: NO,
           canDeleteContent: NO,
 					canEditContent: NO,
@@ -53,13 +53,13 @@ Nestor.mainPage = SC.Page.design({
 					// action: 'selectTarget'
 				})
 			}),
-			bottomRightView: SC.View.design({
+			bottomRightView: SC.ContainerView.design({
+				nowShowing: Nestor.contextMenuController.getPath('selection.container')
 			})
 		}),
 
 		bottomBarView: SC.ToolbarView.design({
-			layout: { bottom: 0, left: 0, right: 0, height: 36 },
-			anchorLocation: SC.ANCHOR_BOTTOM
+			layout: { bottom: 0, left: 0, right: 0, height: 36 }
 		})
 	})  
 
