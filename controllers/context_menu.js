@@ -12,7 +12,6 @@
 */
 Nestor.contextMenuController = SC.TreeController.create(
 /** @scope Nestor.contextMenuController.prototype */ {
-
 	content: null,
   treeItemIsGrouped: YES,
   

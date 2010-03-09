@@ -55,7 +55,7 @@ Nestor.mainPage = SC.Page.design({
 				})
 			}),
 			bottomRightView: SC.ContainerView.design({
-				nowShowing: 'Nestor.searchPage.mainView'
+				nowShowingBinding: SC.Binding.from('Nestor.contextMenuController.selection.firstObject*container').oneWay()
 			})
 		}),
 
