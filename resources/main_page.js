@@ -55,8 +55,8 @@ Nestor.mainPage = SC.Page.design({
 				})
 			}),
 			bottomRightView: SC.ContainerView.design({
-				nowShowingBinding: SC.Binding.from('Nestor.contextMenuController.selection.firstObject*container').oneWay()
-			})
+				nowShowingBinding: SC.Binding.from('Nestor.contextMenuController*selection.firstObject.container').oneWay()
+		})
 		}),
 
 		bottomBarView: SC.ToolbarView.design({

@@ -12,7 +12,6 @@
 Nestor.FileView = SC.View.extend(
 /** @scope Nestor.FileCustomView.prototype */ {
 
-  // TODO: Add your own code here.
 	createChildViews: function() {
 			var childViews = [];
 

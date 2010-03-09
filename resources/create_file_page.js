@@ -10,10 +10,11 @@
 
 Nestor.createFilePage = SC.Page.create({
   
-  mainView: SC.View.design({
-		// backgroundColor: 'grey',
-		// layout: { top: 36, bottom: 36, left: 0, right: 0 },	
-		childViews: 'nameLabelView'.w(),
-		nameLabelView: Nestor.FileView.design({})    
+  mainView: SC.ScrollView.design({
+		contentView: Nestor.FileView.design({ 
+			layout: {top: 15, left: 10}
+		})    
+
+
   })
 }); 
