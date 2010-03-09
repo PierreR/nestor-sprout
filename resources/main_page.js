@@ -1,10 +1,11 @@
 // ==========================================================================
-// Project:   Todos - mainPage
+// Project:   Nestor - mainPage
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals Todos */
+/*globals Nestor */
 
-// This page describes the main user interface for your application.  
+// sc_require('resources/search_page') ;
+
 Nestor.mainPage = SC.Page.design({
 
 	// The main pane is made visible on screen as soon as your app is loaded.
@@ -54,13 +55,14 @@ Nestor.mainPage = SC.Page.design({
 				})
 			}),
 			bottomRightView: SC.ContainerView.design({
-				nowShowing: Nestor.contextMenuController.getPath('selection.container')
+				nowShowing: 'Nestor.searchPage.mainView'
 			})
 		}),
 
 		bottomBarView: SC.ToolbarView.design({
 			layout: { bottom: 0, left: 0, right: 0, height: 36 }
-		})
-	})  
+		}),
+
+	}),
 
 });
