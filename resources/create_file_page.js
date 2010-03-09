@@ -11,10 +11,15 @@
 Nestor.createFilePage = SC.Page.create({
   
   mainView: SC.ScrollView.design({
-		contentView: Nestor.FileView.design({ 
-			layout: {top: 15, left: 10}
-		})    
-
-
+    contentView: SC.View.design({
+    layout: {top: 15, centerX:0, width: 600 },
+      childViews: 'formView buttonView'.w(),
+      formView: Nestor.FileView.design({ 
+		  }),
+      buttonView: SC.SegmentedView.design({
+      layout: {bottom: 15, height: 30},
+        items: [ '_save'.loc(), '_reset'.loc()]  
+      })
+    })
   })
 }); 
