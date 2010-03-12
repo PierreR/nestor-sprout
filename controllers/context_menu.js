@@ -16,7 +16,7 @@ Nestor.contextMenuController = SC.TreeController.create(
   treeItemIsGrouped: YES,
   
   allowsMultipleSelection: NO,
-  allowsEmptySelection: NO,
+  allowsEmptySelection: NO
   
   // used to set the thickness of the sidebar.  bound here.
   // sidebarThickness: 200  // set default thickness in pixels

@@ -11,16 +11,20 @@
 //
 SC.stringsFor('fr', {
 	'_Nestor.DateTime.defaultMediumDateFormat': '%M %d, %Y', 
-	'_Nestor.DateTime.defaultShortDateFormat': '%m.%d.%Y', 
+  '_Nestor.DateTime.defaultShortDateFormat': '%m.%d.%Y',
+  '_abandonedBuilding': "Immeuble à l'abandon", 
 	'_appTitle': "NESTOR 0.1",
 	'_accounting': "Comptabilité",
 	'_create': "Créer",
+  '_districtContract': "Contract de quartier",
 	'_file': "Dossier",
 	'_grantDate': "Date d'octroi",
+  '_isolatedBuilding': "Immeuble isolé",
 	'_loading': "Chargement",
 	'_manager': "Gestionnaire",
 	'_name': "Nom",
 	'_project': "Project",
 	'_publicOperation': "Opération publique",
-	'_search': "Rechercher"
+	'_search': "Rechercher",
+  '_type': "Type"
 	}) ;
