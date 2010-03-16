@@ -9,15 +9,10 @@ sc_require('models/context_menu');
 Nestor.ContextMenu.FIXTURES = [
 
   { guid: 1,
-    name: '_file',
-		treeItemIsExpanded: YES,
-		treeItemChildren: [1, 2] },
-  
-  { guid: 2,
     name: '_project',
-		treeItemChildren: [3, 4, 5] },
+		treeItemChildren: [1, 2, 3] },
 	
-	{ guid: 3,
+	{ guid: 2,
     name: '_accounting',
     treeItemChildren: [] }
 

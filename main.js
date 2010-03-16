@@ -26,13 +26,17 @@ Nestor.main = function main() {
   Nestor.filesController.set('content', files);  
 
   // init static data
-  contextMenu = Nestor.store.find(Nestor.ContextMenu).toArray();
-  menuRoot = SC.Object.create(SC.TreeItemContent, {
-    treeItemIsGrouped: YES,
-    treeItemChildren: contextMenu
-  }); 
-  console.info(contextMenu);
-  Nestor.contextMenuController.set('content', menuRoot) ;
+  Nestor.sourceProjectsController.refreshSources();
+  // contextMenu = Nestor.store.find(Nestor.ContextMenu).toArray();
+  // menuRoot = SC.Object.create(SC.TreeItemContent, {
+  //   treeItemIsGrouped: YES,
+  //   treeItemChildren: contextMenu
+  // }); 
+  // console.info(contextMenu);
+  // Nestor.contextMenuController.set('content', menuRoot) ;
+  //TODO a bit hacky
+  Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
+
 
 } ;
 

@@ -12,8 +12,15 @@
 */
 Nestor.middleContainerController = SC.ObjectController.create(
 /** @scope Nestor.middleContainerController.prototype */ {
-	 nowShowing: 'searchContainer'
-
-  // TODO: Add your own code here.
+  contentBinding: 'Nestor.sourceProjectsController*selection',
+  nowShowing: function() {
+    var content = this.get('content');
+    var page = content.getPath('firstObject.page');
+    if (page) {
+      return 'Nestor.%@.mainView'.fmt(content.getPath('firstObject.page'));
+    } else { 
+      return  'Nestor.searchFilePage.mainView';
+    }
+  }.property('content').cacheable()
 
 }) ;

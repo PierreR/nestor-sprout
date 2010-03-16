@@ -12,7 +12,10 @@
 */
 Nestor.filesController = SC.ArrayController.create(
 /** @scope Nestor.filesController.prototype */ {
-
-  // TODO: Add your own code here.
+  position: 0,
+  openSelectedItem: function() {
+    console.log("coco");
+    Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
+  }
 
 }) ;

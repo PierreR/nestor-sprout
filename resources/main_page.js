@@ -13,51 +13,62 @@ Nestor.mainPage = SC.Page.design({
   // load.
   mainPane: SC.MainPane.design({
 
-    childViews: 'topBarView middleView bottomBarView'.w(),
+    childViews: 'topBarView indicatorView middleView bottomBarView'.w(),
 
-    topBarView: SC.ToolbarView.design({
-      layout: { top: 0, left: 0, right: 0, height: 36 },
-      childViews: 'titleView userView rightActions'.w(),
+    topBarView: SC.ToolbarView.design(SC.Border, {
+      borderStyle: SC.BORDER_BOTTOM,
+      childViews: 'leftView middleView rightView'.w(),
       anchorLocation: SC.ANCHOR_TOP,
-      titleView: SC.LabelView.design({
-        layout: { centerY: 0, centerX: 0, width: 100, height: 24 },
+      leftView: SC.LabelView.design({
+        layout: { left: 10, centerY: 0, width: 100, height: 24 },
         fontWeight: SC.BOLD_WEIGHT,
-        value: "_appTitle".loc()
+        localize: YES,
+        value: '_appTitle'
       }),
 
-      userView: SC.LabelView.design({
-        layout: { centerY: 0, width: 220, height: 24, right: 200 },
-        // icon: 'sc-icon-user-16',
+      middleView: SC.LabelView.design({
+        layout: { centerY: 0, centerX:0, width: 220, height: 24 },
+        icon: 'sc-icon-user-16',
         value: "Pierre Radermecker"
       }),
 
-      rightActions: SC.SegmentedView.design({
+      rightView: SC.SegmentedView.design({
         layout: { centerY: 0, width: 180, height: 24, right: 1 },
         items: 'NL Aide Quitter'.w()
       })
     }),
+
+    indicatorView: SC.View.design({
+      layout: { top: 32, left: 0, right: 0, height: 30 }
+    }),
     
     middleView: SC.SplitView.design({
-      layout: { left: 0, top: 36, bottom: 36, right: 0 },
-      defaultThickness: 0.2,
-      topLeftView: SC.SourceListView.design({
-          contentBinding: "Nestor.contextMenuController.arrangedObjects",
-          selectionBinding: "Nestor.contextMenuController.selection",
+      layout: { left: 0, top: 64, bottom: 35, right: 0 },
+      defaultThickness: 0.1, 
+      dividerThickness: 5,
+      topLeftView: SC.ScrollView.design({
+		contentView: SC.SourceListView.design({
+          contentBinding: "Nestor.sourceProjectsController.arrangedObjects",
+          selectionBinding: "Nestor.sourceProjectsController.selection",
           contentValueKey: 'displayName',
           canReorderContent: NO,
           canDeleteContent: NO,
           canEditContent: NO,
-          hasContentIcon: NO
+          hasContentIcon: NO,
+          contentUnreadCountKey: 'count',
+          canCollapse: NO
           // contentIconKey:  'icon'
           // action: 'selectTarget'
-      }),
+		})
+	  }),
       bottomRightView: SC.ContainerView.design({
-        nowShowingBinding: SC.Binding.from('Nestor.contextMenuController*selection.firstObject.container').oneWay()
+        nowShowingBinding: SC.Binding.from('Nestor.middleContainerController*nowShowing').oneWay(),
+        canCollapse: YES
     })
     }),
 
     bottomBarView: SC.ToolbarView.design({
-      layout: { bottom: 0, left: 0, right: 0, height: 36 }
+      anchorLocation: SC.ANCHOR_BOTTOM
     })
 
   })

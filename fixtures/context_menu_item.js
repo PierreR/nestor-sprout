@@ -7,27 +7,17 @@
 sc_require('models/context_menu_item');
 
 Nestor.ContextMenuItem.FIXTURES = [
-
+  
   { guid: 1,
-    name: '_search',
-		container: 'Nestor.searchFilePage.mainView',
-		parent: 1 },
-  
-  { guid: 2,
-		name: '_create',
-		container: 'Nestor.createFilePage.mainView',
-    parent: 1 },
-  
-  { guid: 3,
     name: '_publicOperation',
     parent: 2 },
   
-  { guid: 4,
+  { guid: 2,
     name: 'PPP',
     parent: 2 },
   
-  { guid: 5,
-    name: '_nextOne',
+  { guid: 3,
+    name: '_socialCohesion',
     parent: 2 }
 
 ];
