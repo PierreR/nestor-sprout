@@ -19,11 +19,6 @@ Nestor.sourceProjectsController = SC.TreeController.create(
   allowsMultipleSelection: NO,
   allowsEmptySelection: YES, // initially nothing is selected when the search view is on
   
-  // firstSelectableObject: function() {
-  //   var objects = this.get('arrangedObjects');
-  //   return objects && objects.objectAt(0); 
-  // }.property(),
-
   refreshSources: function() {
     var projectSources = SC.Object.create({
       treeItemIsExpanded: YES,
