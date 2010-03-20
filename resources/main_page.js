@@ -17,15 +17,17 @@ Nestor.mainPage = SC.Page.design({
 
     topBarView: SC.ToolbarView.design(SC.Border, {
       borderStyle: SC.BORDER_BOTTOM,
-      childViews: 'leftView middleView rightView'.w(),
+      childViews: 'appNameView appVersionView middleView rightView'.w(),
       anchorLocation: SC.ANCHOR_TOP,
-      leftView: SC.LabelView.design({
-        layout: { left: 10, centerY: 0, width: 100, height: 24 },
+      appNameView: SC.LabelView.design({
+        layout: { left: 10, centerY: 0, width: 60, height: 24 },
         fontWeight: SC.BOLD_WEIGHT,
-        localize: YES,
-        value: '_appTitle'
+        value: Nestor.NAMESPACE.toUpperCase()
       }),
-
+      appVersionView: SC.LabelView.design({
+        layout: { left: 75, centerY: 8, width: 40, height: 24 },
+        value: 'v%@'.fmt(Nestor.VERSION)
+      }),
       middleView: SC.LabelView.design({
         layout: { centerY: 0, centerX:0, width: 220, height: 24 },
         icon: 'sc-icon-user-16',
