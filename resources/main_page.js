@@ -11,6 +11,7 @@ Nestor.mainPage = SC.Page.design({
   // The main pane is made visible on screen as soon as your app is loaded.
   // Add childViews to this pane for views to display immediately on page 
   // load.
+  // TODO: Find a way to get rid of height 24 for every label and field ...
   mainPane: SC.MainPane.design({
 
     childViews: 'topBarView indicatorView middleView bottomBarView'.w(),
@@ -41,7 +42,18 @@ Nestor.mainPage = SC.Page.design({
     }),
 
     indicatorView: SC.View.design({
-      layout: { top: 32, left: 0, right: 0, height: 30 }
+      layout: { top: 32, left: 0, right: 0, height: 30 },
+      childViews: [
+        Nestor.IndicatorView.design({
+          params: [
+            {label: '_reference', labelWidth: 75, fieldBinding: 'reference'}, 
+            {label: '_type', fieldBinding: 'contractType', fieldWidth:140 },
+            {label: '_name', fieldBinding: 'name'},
+            {label: '_townShip', labelWidth: 80, fieldBinding: 'townShip'},
+            {label: '_manager', labelWidth: 90, fieldBinding: 'managerName'}
+          ]
+        })
+      ]
     }),
     
     middleView: SC.SplitView.design({
@@ -49,7 +61,7 @@ Nestor.mainPage = SC.Page.design({
       defaultThickness: 0.1, 
       dividerThickness: 5,
       topLeftView: SC.ScrollView.design({
-		contentView: SC.SourceListView.design({
+        contentView: SC.SourceListView.design({
           contentBinding: "Nestor.sourceProjectsController.arrangedObjects",
           selectionBinding: "Nestor.sourceProjectsController.selection",
           contentValueKey: 'displayName',
@@ -61,7 +73,7 @@ Nestor.mainPage = SC.Page.design({
           canCollapse: NO
           // contentIconKey:  'icon'
           // action: 'selectTarget'
-		})
+        })
 	  }),
       bottomRightView: SC.ContainerView.design({
         nowShowingBinding: SC.Binding.from('Nestor.middleContainerController*nowShowing').oneWay(),

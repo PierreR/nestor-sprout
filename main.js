@@ -12,19 +12,14 @@
 // See comments for some pointers on what to do next.
 //
 Nestor.main = function main() {
-  var files; 
-  // Step 1: Instantiate Your Views
+  // Instantiate mainPage
   Nestor.getPath('mainPage.mainPane').append() ;
-  // Step 2. Set the content property on your primary controller.
-  files = Nestor.store.find(Nestor.File);
-  Nestor.filesController.set('content', files);  
-
-  // populate the left tree with data
+  // Populate the left tree with static data
   Nestor.sourceProjectsController.refreshSources();
-  //TODO a bit hacky; we should use Responder to handle this
+  // TODO No so sure it does not belong to the search state
   Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
-
-
+  // GO into the search state
+  Nestor.makeFirstResponder(Nestor.SEARCH);
 } ;
 
 function main() { Nestor.main(); }

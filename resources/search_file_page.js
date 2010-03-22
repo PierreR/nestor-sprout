@@ -29,6 +29,7 @@ Nestor.searchFilePage = SC.Page.create({
        SC.TableColumn.create({
          key:   'grantDate',
          label: '_grantDate'.loc(),
+         formatter: function(value) {return value.toFormattedString('%d/%m/%Y');},
          width: 200,
          minWidth: 150
        })
@@ -37,9 +38,10 @@ Nestor.searchFilePage = SC.Page.create({
        showAlternatingRows: YES,
        contentBinding:   'Nestor.filesController.arrangedObjects',
        selectionBinding: 'Nestor.filesController.selection',
-       canReorderContent: YES,
+       canReorderContent: NO,
        exampleView: SC.TableRowView,
        recordType: Nestor.File,
+       localize: YES,
        target: 'Nestor.filesController',
        action: 'openSelectedItem'
    })

@@ -33,7 +33,9 @@ SC.stringsFor('fr', {
   '_preliminaryPlan': "Avant-projet",
 	'_project': "Project%@",
 	'_publicOperation': "Opération%@ publique%@",
+  '_reference': "Référence",
 	'_search': "Rechercher",
   '_socialCohesion': "Cohésion sociale",
+  '_townShip': "Commmune",
   '_type': "Type"
 	}) ;

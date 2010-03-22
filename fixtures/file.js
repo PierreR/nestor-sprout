@@ -10,21 +10,27 @@ Nestor.File.FIXTURES = [
 	{
 		guid: 1,
 		name: "File-1",
-		managerName: "Michael",
+    contractType: "_districtContract",
+    townShip: "Ixelles",
+		managerName: "John Doe",
 		grantDate: SC.DateTime.create()
 	},
 
 	{ 
 		guid: 2,
 		name: "File-2",
-		managerName: "Dwight",
+    contractType: "_districtContract",
+    townShip: "Bruxelles",
+		managerName: "Jim Dwight",
 		grantDate: SC.DateTime.create()
 	},
 
 	{ 
 		guid: 3,
 		name: "File-3",
-		managerName: "Jim",
+    contractType: "_districtContract",
+    townShip: "Saint-Gille",
+		managerName: "Michel Caron",
 		grantDate: SC.DateTime.create()
 	}
 
