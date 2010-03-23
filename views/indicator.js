@@ -16,7 +16,7 @@ Nestor.IndicatorView = SC.View.extend(
 /** @scope Nestor.IndicatorView.prototype */ {
   params: [],
   isEnabled: NO,
-  separationSpace: 60,
+  separationSpace: 50, // ideally this should depends on the user resolution. The default value will work on 1280x1024 and above
 
   createChildViews: function() {
     var value, valueBinding, labelWidth, fieldWidth,
@@ -47,9 +47,9 @@ Nestor.IndicatorView = SC.View.extend(
       fieldView = this.createChildView(
         SC.TextFieldView.design({
           layout: {left: left, centerY:0, width: fieldWidth, height: 20},
-          isEnabled: isEnabled,
+          isEnabledBinding: SC.Binding.from('Nestor.fileController*hasContent').oneWay().not(),
           valueBinding: SC.Binding.from('Nestor.fileController*content.firstObject.%@'.fmt(valueBinding))
-                          .oneWay().toLocale()        
+                          .oneWay()        
         })
       );
       childViews.push(fieldView);

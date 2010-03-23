@@ -14,4 +14,5 @@ Nestor.fileController = SC.ObjectController.create(
 /** @scope Nestor.fileController.prototype */ {
 
   contentBinding: 'Nestor.filesController*selection'
+
 }) ;

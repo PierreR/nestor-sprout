@@ -13,6 +13,7 @@ Nestor.mainPage = SC.Page.design({
   // load.
   // TODO: Find a way to get rid of height 24 for every label and field ...
   mainPane: SC.MainPane.design({
+    
 
     childViews: 'topBarView indicatorView middleView bottomBarView'.w(),
 
@@ -36,7 +37,7 @@ Nestor.mainPage = SC.Page.design({
       }),
 
       rightView: SC.SegmentedView.design({
-        layout: { centerY: 0, width: 180, height: 24, right: 1 },
+        layout: { centerY: 0, width: 170, height: 24, right: 1 },
         items: 'NL Aide Quitter'.w()
       })
     }),
@@ -47,11 +48,17 @@ Nestor.mainPage = SC.Page.design({
         Nestor.IndicatorView.design({
           params: [
             {label: '_reference', labelWidth: 75, fieldBinding: 'reference'}, 
-            {label: '_type', fieldBinding: 'contractType', fieldWidth:140 },
+            {label: '_type', fieldBinding: 'contractType', fieldWidth:150 },
             {label: '_name', fieldBinding: 'name'},
             {label: '_townShip', labelWidth: 80, fieldBinding: 'townShip'},
             {label: '_manager', labelWidth: 90, fieldBinding: 'managerName'}
           ]
+        }),
+        SC.ButtonView.design({
+          layout: {right: 10, width: 120, height:24, centerY:0 },
+          displayTitle: "_search".loc(),
+          isEnabledBinding: SC.Binding.from('Nestor.fileController*hasContent').oneWay().not(),
+          icon: static_url('images/search-32.png')
         })
       ]
     }),

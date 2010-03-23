@@ -5,12 +5,15 @@
 /*globals Nestor */
 
 sc_require('models/file');
-
+/**
+ * Fixture values will be sent translated by the backend
+ */
 Nestor.File.FIXTURES = [
 	{
 		guid: 1,
-		name: "File-1",
-    contractType: "_districtContract",
+		name: "Brabant-Verte",
+    reference: "CQ 212 221",
+    contractType: "Contract de quartier",
     townShip: "Ixelles",
 		managerName: "John Doe",
 		grantDate: SC.DateTime.create()
@@ -18,8 +21,9 @@ Nestor.File.FIXTURES = [
 
 	{ 
 		guid: 2,
-		name: "File-2",
-    contractType: "_districtContract",
+		name: "Eureka",
+    reference: "DR 323 786",
+    contractType: "Immeuble isolé",
     townShip: "Bruxelles",
 		managerName: "Jim Dwight",
 		grantDate: SC.DateTime.create()
@@ -27,8 +31,9 @@ Nestor.File.FIXTURES = [
 
 	{ 
 		guid: 3,
-		name: "File-3",
-    contractType: "_districtContract",
+		name: "Redpoison",
+    reference: "IA 293 392",
+    contractType: "Immeuble à l'abandon",
     townShip: "Saint-Gille",
 		managerName: "Michel Caron",
 		grantDate: SC.DateTime.create()

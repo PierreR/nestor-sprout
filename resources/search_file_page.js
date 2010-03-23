@@ -41,7 +41,7 @@ Nestor.searchFilePage = SC.Page.create({
        canReorderContent: NO,
        exampleView: SC.TableRowView,
        recordType: Nestor.File,
-       localize: YES,
+       allowsEmptySelection: YES,
        target: 'Nestor.filesController',
        action: 'openSelectedItem'
    })
