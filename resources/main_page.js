@@ -14,7 +14,7 @@ Nestor.mainPage = SC.Page.design({
   // TODO: Find a way to get rid of height 24 for every label and field ...
   mainPane: SC.MainPane.design({
     
-
+    /** we might put a ScrollView here to allow horizontal scrolling at lower resolution */
     childViews: 'topBarView indicatorView middleView bottomBarView'.w(),
 
     topBarView: SC.ToolbarView.design(SC.Border, {
@@ -55,7 +55,7 @@ Nestor.mainPage = SC.Page.design({
           ]
         }),
         SC.ButtonView.design({
-          layout: {right: 10, width: 120, height:24, centerY:0 },
+          layout: {right: 10, width: 120, height:24, centerY:0 }, // buttons are not displayed without an height and width
           displayTitle: "_search".loc(),
           isEnabledBinding: SC.Binding.from('Nestor.fileController*hasContent').oneWay().not(),
           icon: static_url('images/search-32.png')

@@ -13,6 +13,13 @@
 Nestor.fileController = SC.ObjectController.create(
 /** @scope Nestor.fileController.prototype */ {
 
-  contentBinding: 'Nestor.filesController*selection'
+  contentBinding: 'Nestor.filesController.selection'
+
+  // nameBinding : '.name',
+  // townShip : '',
+  // type : '',
+  // managerName : ''
+  
+  
 
 }) ;

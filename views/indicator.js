@@ -48,8 +48,8 @@ Nestor.IndicatorView = SC.View.extend(
         SC.TextFieldView.design({
           layout: {left: left, centerY:0, width: fieldWidth, height: 20},
           isEnabledBinding: SC.Binding.from('Nestor.fileController*hasContent').oneWay().not(),
-          valueBinding: SC.Binding.from('Nestor.fileController*content.firstObject.%@'.fmt(valueBinding))
-                          .oneWay()        
+          valueBinding: SC.Binding.from('Nestor.fileController.%@'.fmt(valueBinding))
+                          .oneWay() // of course we don't want to localize field values !       
         })
       );
       childViews.push(fieldView);
