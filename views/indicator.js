@@ -15,11 +15,10 @@
 Nestor.IndicatorView = SC.View.extend(
 /** @scope Nestor.IndicatorView.prototype */ {
   params: [],
-  isEnabled: NO,
   separationSpace: 50, // ideally this should depends on the user resolution. The default value will work on 1280x1024 and above
 
   createChildViews: function() {
-    var value, valueBinding, labelWidth, fieldWidth,
+    var value, valueBinding, textFieldView, labelWidth, fieldWidth,
         item, labelView, fieldView,
         i = 0, left = 5,
         childViews = [],
@@ -44,14 +43,16 @@ Nestor.IndicatorView = SC.View.extend(
       valueBinding = item.fieldBinding;
       left += labelWidth + 5;
       fieldWidth = item.fieldWidth || 100;
-      fieldView = this.createChildView(
-        SC.TextFieldView.design({
+      textFieldView = SC.TextFieldView.design({
           layout: {left: left, centerY:0, width: fieldWidth, height: 20},
-          isEnabledBinding: SC.Binding.from('Nestor.fileController*hasContent').oneWay().not(),
-          valueBinding: SC.Binding.from('Nestor.fileController.%@'.fmt(valueBinding))
-                          .oneWay() // of course we don't want to localize field values !       
-        })
-      );
+          isEnabled: item.isFieldEnabled,
+          valueBinding: SC.Binding.from('Nestor.indicatorController.%@'.fmt(valueBinding))
+      });
+      if (SC.none(item.isFieldEnabled)) {
+        textFieldView.bind('isEnabled', SC.Binding.from('Nestor.filesController*hasSelection').oneWay().not()); 
+      }
+      
+      fieldView = this.createChildView(textFieldView);
       childViews.push(fieldView);
       left = left + fieldWidth + this.get('separationSpace');
     }
@@ -59,4 +60,5 @@ Nestor.IndicatorView = SC.View.extend(
     this.set('childViews', childViews);
 
   }
+
 });

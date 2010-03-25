@@ -19,7 +19,22 @@ Nestor.filesController = SC.ArrayController.create(
     sourceController = Nestor.sourceProjectsController;
     firstTreeItem = sourceController.get('arrangedObjects').objectAt(0);
     sourceController.selectObject(firstTreeItem);
+    
     Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
-  }
+  },
+  
+  name: null,
+  contractType: null,
+  managerName: null,
+  townShip: null,
+
+  selectionDidChange: function() {
+    if (this.hasContent()) {
+      this.set('name', this.getPath('.selection.name'));
+      this.set('contractType', this.getPath('content.contractType'));
+      this.set('managerName', this.getPath('content.managerName'));
+      this.set('townShip', this.getPath('content.townShip'));
+    }
+  }.observes('selection')
 
 }) ;
