@@ -24,7 +24,7 @@ Nestor.IndicatorView = SC.View.extend(
         childViews = [],
         params = this.get('params'),
         length = params.length,
-        isEnabled = this.get('isEnabled');
+        controller = 'Nestor.searchFilesController';
 
 
     for(i; i< length; i++) {
@@ -46,10 +46,10 @@ Nestor.IndicatorView = SC.View.extend(
       textFieldView = SC.TextFieldView.design({
           layout: {left: left, centerY:0, width: fieldWidth, height: 20},
           isEnabled: item.isFieldEnabled,
-          valueBinding: SC.Binding.from('Nestor.indicatorController.%@'.fmt(valueBinding))
+          valueBinding: SC.Binding.from('%@*%@'.fmt(controller, valueBinding))
       });
       if (SC.none(item.isFieldEnabled)) {
-        textFieldView.bind('isEnabled', SC.Binding.from('Nestor.filesController*hasSelection').oneWay().not()); 
+        textFieldView.bind('isEnabled', SC.Binding.from('%@.hasSelection'.fmt(controller)).oneWay().not()); 
       }
       
       fieldView = this.createChildView(textFieldView);

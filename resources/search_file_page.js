@@ -12,8 +12,7 @@
 */
 Nestor.searchFilePage = SC.Page.create({
   /** @scope Nestor.SearchView.prototype */ 
-
-   mainView:  SC.TableView.design({
+  mainView:  SC.TableView.design({
      columns: [ 
        SC.TableColumn.create({
          key:   'name',
@@ -37,13 +36,12 @@ Nestor.searchFilePage = SC.Page.create({
        // flexibleColumn:   tableColumns.objectAt(0),
        showAlternatingRows: YES,
        actOnSelect: YES,
-       contentBinding:   'Nestor.filesController.arrangedObjects',
-       selectionBinding: 'Nestor.filesController.selection',
+       contentBinding:   'Nestor.searchFilesController.arrangedObjects',
+       selectionBinding: 'Nestor.searchFilesController.selection',
        canReorderContent: NO,
        exampleView: SC.TableRowView,
        recordType: Nestor.File,
        allowsEmptySelection: YES,
-       target: 'Nestor.filesController',
        action: 'openSelectedItem'
    })
 });
