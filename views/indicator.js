@@ -46,7 +46,7 @@ Nestor.IndicatorView = SC.View.extend(
       textFieldView = SC.TextFieldView.design({
           layout: {left: left, centerY:0, width: fieldWidth, height: 20},
           isEnabled: item.isFieldEnabled,
-          valueBinding: SC.Binding.from('%@*%@'.fmt(controller, valueBinding))
+          valueBinding: SC.Binding.from('%@.%@'.fmt(controller, valueBinding))
       });
       if (SC.none(item.isFieldEnabled)) {
         textFieldView.bind('isEnabled', SC.Binding.from('%@.hasSelection'.fmt(controller)).oneWay().not()); 

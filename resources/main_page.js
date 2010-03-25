@@ -58,7 +58,7 @@ Nestor.mainPage = SC.Page.design({
         SC.ButtonView.design({
           layout: {right: 10, width: 120, height:24, centerY:0 }, // buttons are not displayed without an height and width
           displayTitle: "_search".loc(),
-          isEnabledBinding: SC.Binding.from('Nestor.searchFilesController*hasSelection').oneWay().not(),
+          isEnabledBinding: SC.Binding.from('Nestor.searchFilesController.hasSelection').oneWay().not(),
           icon: static_url('images/search-32.png')
         })
       ]
