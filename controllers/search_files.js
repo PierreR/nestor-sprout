@@ -34,7 +34,42 @@ Nestor.searchFilesController = SC.ArrayController.create(
     this.set('contractType', sel.get('contractType'));
     this.set('managerName', sel.get('managerName'));
     this.set('townShip', sel.get('townShip'));
-  }.observes('selection')
+  }.observes('selection'),
 
+  filterSearchFiles: function() {
+    var name = this.get('name'),
+        townShip = this.get('townShip'),
+        managerName = this.get('managerName'),
+        contractType = this.get('contractType'),
+        result,
+        conditions = [],
+        query;
+    
+    
+    if (contractType) {
+      conditions.push("contractType CONTAINS '%@'".fmt(contractType));
+    }
+
+    if (name) {
+      conditions.push("name CONTAINS '%@'".fmt(name));
+    }
+
+    if (townShip) {
+      conditions.push("townShip = '%@'".fmt(townShip)); 
+    }
+
+    if (managerName) {
+      conditions.push("managerName CONTAINS '%@'".fmt(managerName)); 
+    }
+
+    query = SC.Query.create({
+      conditions: conditions.join(' AND '), 
+      recordType: Nestor.File,
+      orderBy: "name"
+    }); 
+    result = Nestor.store.find(query);
+    this.set('content', result);
+    
+  }
 
 }) ;

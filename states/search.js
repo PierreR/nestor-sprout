@@ -14,7 +14,7 @@
 Nestor.SEARCH = SC.Responder.create(
 /** @scope Nestor.SEARCH.prototype */ {
 
-  openSelectedItem: function() { //TODO: Change this and use a Responder chain instead
+  openSelectedItem: function() {
     var sourceController, firstTreeItem;
 
     sourceController = Nestor.sourceProjectsController;
@@ -23,14 +23,18 @@ Nestor.SEARCH = SC.Responder.create(
     
     Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
   },
+  
   /**
     The next state to check if this state does not implement the action.
   */
   nextResponder: null,
   
   didBecomeFirstResponder: function() {
-    var allFiles = Nestor.store.find(Nestor.File);
-    Nestor.searchFilesController.set('content', allFiles); 
+    var controller = Nestor.searchFilesController,
+        result;
+
+    result = Nestor.store.find(Nestor.File);
+    controller.set('content', result); 
   },
   
   willLoseFirstResponder: function() {
