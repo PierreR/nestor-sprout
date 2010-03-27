@@ -14,7 +14,6 @@
 Nestor.selectFilePage = SC.Page.create({
   /** @scope Nestor.selectFilePage.prototype */ 
   mainView: SC.SplitView.design({
-    // layout: { left: 0, top: 64, bottom: 35, right: 0 },
     defaultThickness: 0.2, 
     dividerThickness: 5,
     topLeftView: SC.ScrollView.design({
@@ -34,7 +33,7 @@ Nestor.selectFilePage = SC.Page.create({
     }),
     bottomRightView: SC.ContainerView.design({
       // nowShowingBinding: SC.Binding.from('Nestor.middleContainerController*nowShowing').oneWay(),
-      canCollapse: YES
+      canCollapse: NO
     })
   })
 });

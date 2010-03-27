@@ -20,7 +20,7 @@ Nestor.SELECT = SC.Responder.create(
   nextResponder: null,
   
   didBecomeFirstResponder: function() {
-    Nestor.searchFilesController.set('searchMode', NO);
+    Nestor.searchFilesController.setCriteriaFields();
   },
   
   willLoseFirstResponder: function() {

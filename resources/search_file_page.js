@@ -35,7 +35,7 @@ Nestor.searchFilePage = SC.Page.create({
        ],
        // flexibleColumn:   tableColumns.objectAt(0),
        showAlternatingRows: YES,
-       actOnSelect: YES,
+       // actOnSelect: YES,
        contentBinding:   'Nestor.searchFilesController.arrangedObjects',
        selectionBinding: 'Nestor.searchFilesController.selection',
        canReorderContent: NO,

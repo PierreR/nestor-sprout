@@ -21,14 +21,15 @@ Nestor.searchFilesController = SC.ArrayController.create(
 
   content: null, // will contain the filtered files displayed (by a TableView)
   
+  // criteria fields
   reference: null,
   name: null,
   contractType: null,
   managerName: null,
   townShip: null,
 
-  searchMode: YES,
-  
+  searchMode: YES, // bound by 'isEnabled' of each criteria fields
+
   reset: function() {
     this.set('reference', null);
     this.set('name', null);
@@ -38,17 +39,19 @@ Nestor.searchFilesController = SC.ArrayController.create(
     this.set('searchMode', YES);
   },
 
-  selectionDidChange: function() {
+  setCriteriaFields: function() {
     var sel = this.get('selection').get('firstObject');
     this.set('reference', sel.get('reference'));
     this.set('name', sel.get('name'));
     this.set('contractType', sel.get('contractType'));
     this.set('managerName', sel.get('managerName'));
     this.set('townShip', sel.get('townShip'));
-  }.observes('selection'),
+    this.set('searchMode', NO);
+  },
 
-  searchFiles: function() {
+  search: function() {
     var name = this.get('name'),
+        reference = this.get('reference'),
         townShip = this.get('townShip'),
         managerName = this.get('managerName'),
         contractType = this.get('contractType'),
@@ -57,6 +60,10 @@ Nestor.searchFilesController = SC.ArrayController.create(
         query;
     
     
+    if (reference) {
+      conditions.push("reference CONTAINS '%@'".fmt(reference));
+    }
+
     if (contractType) {
       conditions.push("contractType CONTAINS '%@'".fmt(contractType));
     }

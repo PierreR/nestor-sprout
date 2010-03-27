@@ -18,7 +18,7 @@ Nestor.IndicatorView = SC.View.extend(
   separationSpace: 50, // ideally this should depends on the user resolution. The default value will work on 1280x1024 and above
 
   createChildViews: function() {
-    var value, valueBinding, textFieldView, labelWidth, fieldWidth,
+    var value, valueBinding, labelWidth, fieldWidth,
         item, labelView, fieldView,
         i = 0, left = 5,
         childViews = [],
@@ -43,16 +43,13 @@ Nestor.IndicatorView = SC.View.extend(
       valueBinding = item.fieldBinding;
       left += labelWidth + 5;
       fieldWidth = item.fieldWidth || 100;
-      textFieldView = SC.TextFieldView.design({
+      fieldView = this.createChildView(
+        SC.TextFieldView.design({
           layout: {left: left, centerY:0, width: fieldWidth, height: 20},
-          isEnabled: item.isFieldEnabled,
+          isEnabledBinding: SC.Binding.from('%@.searchMode'.fmt(controller)).oneWay(),
           valueBinding: SC.Binding.from('%@.%@'.fmt(controller, valueBinding))
-      });
-      if (SC.none(item.isFieldEnabled)) {
-        textFieldView.bind('isEnabled', SC.Binding.from('%@.searchMode'.fmt(controller)).oneWay()); 
-      }
-      
-      fieldView = this.createChildView(textFieldView);
+        })
+      );
       childViews.push(fieldView);
       left = left + fieldWidth + this.get('separationSpace');
     }
