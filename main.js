@@ -17,7 +17,7 @@ Nestor.main = function main() {
   // Populate the left tree with static data
   Nestor.sourceProjectsController.refreshSources();
   // TODO No so sure it does not belong to the search state
-  Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
+  // Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
   // GO into the search state
   Nestor.makeFirstResponder(Nestor.SEARCH);
 } ;

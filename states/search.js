@@ -14,40 +14,36 @@
 Nestor.SEARCH = SC.Responder.create(
 /** @scope Nestor.SEARCH.prototype */ {
 
-  openSelectedItem: function() {
-    var sourceController, firstTreeItem;
-
-    sourceController = Nestor.sourceProjectsController;
-    firstTreeItem = sourceController.get('arrangedObjects').objectAt(0);
-    sourceController.selectObject(firstTreeItem);
-    
-    Nestor.mainPage.mainPane.middleView.dividerView.doubleClick();
-  },
-  
   /**
     The next state to check if this state does not implement the action.
   */
   nextResponder: null,
   
   didBecomeFirstResponder: function() {
-    var controller = Nestor.searchFilesController,
-        result;
-
-    result = Nestor.store.find(Nestor.File);
-    controller.set('content', result); 
+    this._setView("Nestor.searchFilePage.mainView");
+    this._controller.set('content', Nestor.store.find(Nestor.File)); 
+    this._controller.reset();
   },
   
-  willLoseFirstResponder: function() {
-    // Called when this state loses first responder
+  willLoseFirstResponder: function() {    
+    this._setView("Nestor.selectFilePage.mainView");
   },
   
   // ..........................................................
   // EVENTS
   //
+  openSelectedItem: function() {
+    Nestor.makeFirstResponder(Nestor.SELECT);
+  },
   
-  // add event handlers here
-  someAction: function() {
-    
-  }
-  
+  searchFiles: function() {
+    this._controller.searchFiles();
+  },
+
+  _setView: function(value) {
+    Nestor.mainPage.mainPane.middleView.set("nowShowing", value);
+  },
+
+  // Managed controller
+  _controller: Nestor.searchFilesController
 }) ;

@@ -49,7 +49,7 @@ Nestor.IndicatorView = SC.View.extend(
           valueBinding: SC.Binding.from('%@.%@'.fmt(controller, valueBinding))
       });
       if (SC.none(item.isFieldEnabled)) {
-        textFieldView.bind('isEnabled', SC.Binding.from('%@.hasSelection'.fmt(controller)).oneWay().not()); 
+        textFieldView.bind('isEnabled', SC.Binding.from('%@.searchMode'.fmt(controller)).oneWay()); 
       }
       
       fieldView = this.createChildView(textFieldView);

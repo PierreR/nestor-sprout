@@ -20,11 +20,10 @@ Nestor.SELECT = SC.Responder.create(
   nextResponder: null,
   
   didBecomeFirstResponder: function() {
-    console.log("File selected");
+    Nestor.searchFilesController.set('searchMode', NO);
   },
   
   willLoseFirstResponder: function() {
-    // Called when this state loses first responder
   },
   
   // ..........................................................
@@ -32,8 +31,8 @@ Nestor.SELECT = SC.Responder.create(
   //
   
   // add event handlers here
-  someAction: function() {
-    
+  searchFiles: function() {
+    Nestor.makeFirstResponder(Nestor.SEARCH);
   }
-  
+
 }) ;

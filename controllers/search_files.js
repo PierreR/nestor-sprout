@@ -27,6 +27,17 @@ Nestor.searchFilesController = SC.ArrayController.create(
   managerName: null,
   townShip: null,
 
+  searchMode: YES,
+  
+  reset: function() {
+    this.set('reference', null);
+    this.set('name', null);
+    this.set('contractType', null);
+    this.set('managerName', null);
+    this.set('townShip', null);
+    this.set('searchMode', YES);
+  },
+
   selectionDidChange: function() {
     var sel = this.get('selection').get('firstObject');
     this.set('reference', sel.get('reference'));
@@ -36,7 +47,7 @@ Nestor.searchFilesController = SC.ArrayController.create(
     this.set('townShip', sel.get('townShip'));
   }.observes('selection'),
 
-  filterSearchFiles: function() {
+  searchFiles: function() {
     var name = this.get('name'),
         townShip = this.get('townShip'),
         managerName = this.get('managerName'),

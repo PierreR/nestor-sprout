@@ -14,7 +14,7 @@ Nestor.mainPage = SC.Page.design({
   // TODO: Find a way to get rid of height 24 for every label and field ...
   mainPane: SC.MainPane.design({
     
-    defaultResponder: 'Nestor.SEARCH',
+    defaultResponder: 'Nestor.firstResponder', 
     /** we might put a ScrollView here to allow horizontal scrolling at lower resolution */
     childViews: 'topBarView indicatorView middleView bottomBarView'.w(),
 
@@ -58,37 +58,14 @@ Nestor.mainPage = SC.Page.design({
         SC.ButtonView.design({
           layout: {right: 10, width: 120, height:24, centerY:0 }, // buttons are not displayed without an height and width
           displayTitle: "_search".loc(),
-          isEnabledBinding: SC.Binding.from('Nestor.searchFilesController.hasSelection').oneWay().not(),
           icon: static_url('images/search-32.png'),
-          target: Nestor.searchFilesController,
-          action: 'filterSearchFiles'
+          action: 'searchFiles'
         })
       ]
     }),
     
-    middleView: SC.SplitView.design({
-      layout: { left: 0, top: 64, bottom: 35, right: 0 },
-      defaultThickness: 0.1, 
-      dividerThickness: 5,
-      topLeftView: SC.ScrollView.design({
-        contentView: SC.SourceListView.design({
-          contentBinding: "Nestor.sourceProjectsController.arrangedObjects",
-          selectionBinding: "Nestor.sourceProjectsController.selection",
-          contentValueKey: 'displayName',
-          canReorderContent: NO,
-          canDeleteContent: NO,
-          canEditContent: NO,
-          hasContentIcon: NO,
-          contentUnreadCountKey: 'count',
-          canCollapse: NO
-          // contentIconKey:  'icon'
-          // action: 'selectTarget'
-        })
-	  }),
-      bottomRightView: SC.ContainerView.design({
-        nowShowingBinding: SC.Binding.from('Nestor.middleContainerController*nowShowing').oneWay(),
-        canCollapse: YES
-    })
+    middleView: SC.ContainerView.design({
+      layout: { left: 0, top: 64, bottom: 35, right: 0 }
     }),
 
     bottomBarView: SC.ToolbarView.design({

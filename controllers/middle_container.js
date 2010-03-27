@@ -12,15 +12,16 @@
 */
 Nestor.middleContainerController = SC.ObjectController.create(
 /** @scope Nestor.middleContainerController.prototype */ {
-  contentBinding: 'Nestor.sourceProjectsController*selection',
-  nowShowing: function() {
-    var content = this.get('content');
-    var page = content.getPath('firstObject.page');
-    if (page) {
-      return 'Nestor.%@.mainView'.fmt(content.getPath('firstObject.page'));
-    } else { 
-      return  'Nestor.searchFilePage.mainView';
-    }
-  }.property('content').cacheable()
+  content: 'null' // path to the view to display in the middle area
+  // contentBinding: 'Nestor.sourceProjectsController*selection',
+  // nowShowing: function() {
+  //   var content = this.get('content');
+  //   var page = content.getPath('firstObject.page');
+  //   if (page) {
+  //     return 'Nestor.%@.mainView'.fmt(content.getPath('firstObject.page'));
+  //   } else { 
+  //     return  'Nestor.searchFilePage.mainView';
+  //   }
+  // }.property('content').cacheable()
 
 }) ;
