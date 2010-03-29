@@ -16,7 +16,8 @@ Nestor.File.FIXTURES = [
     contractType: "Contract de quartier",
     townShip: "Ixelles",
 		managerName: "John Doe",
-		grantDate: SC.DateTime.create()
+		grantDate: SC.DateTime.create(),
+    operations: [1, 2, 3]
 	},
 
 	{ 
@@ -26,7 +27,8 @@ Nestor.File.FIXTURES = [
     contractType: "Immeuble isolé",
     townShip: "Bruxelles",
 		managerName: "Jim Dwight",
-		grantDate: SC.DateTime.create()
+		grantDate: SC.DateTime.create(),
+    operations: [4, 5]
 	},
 
 	{ 
@@ -34,9 +36,43 @@ Nestor.File.FIXTURES = [
 		name: "Redpoison",
     reference: "IA 293 392",
     contractType: "Immeuble à l'abandon",
-    townShip: "Saint-Gille",
+    townShip: "Saint-Gilles",
 		managerName: "Michel Caron",
-		grantDate: SC.DateTime.create()
+		grantDate: SC.DateTime.create(),
+    operations: [6]
+	},
+
+	{ 
+		guid: 4,
+		name: "ProLux",
+    reference: "DR 293 392",
+    contractType: "Immeuble isolé",
+    townShip: "Eterbeek",
+		managerName: "François Cotillard",
+		grantDate: SC.DateTime.create(),
+    operations: [7]
+	},
+
+	{ 
+		guid: 5,
+		name: "Primavera",
+    reference: "IA 293 392",
+    contractType: "Immeuble à l'abandon",
+    townShip: "Anderlecht",
+		managerName: "Paul VanHimps",
+		grantDate: SC.DateTime.create(),
+    operations: [8]
+	},
+
+  { 
+		guid: 6,
+		name: "ElSolo",
+    reference: "CQ 251 392",
+    contractType: "Contract de quartier",
+    townShip: "Bruxelles",
+		managerName: "Kim Toenig",
+		grantDate: SC.DateTime.create(),
+    operations: []
 	}
 
 	];

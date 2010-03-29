@@ -15,8 +15,23 @@ Nestor.searchFilePage = SC.Page.create({
   mainView:  SC.TableView.design({
      columns: [ 
        SC.TableColumn.create({
+         key:   'reference',
+         label: '_reference'.loc(),
+         width: 120
+       }),
+       SC.TableColumn.create({
          key:   'name',
          label: '_name'.loc(),
+         width: 200
+       }),
+       SC.TableColumn.create({
+         key:   'contractType',
+         label: '_contractType'.loc(),
+         width: 200
+       }),
+       SC.TableColumn.create({
+         key:   'townShip',
+         label: '_townShip'.loc(),
          width: 200
        }),
        SC.TableColumn.create({

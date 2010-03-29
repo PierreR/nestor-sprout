@@ -16,7 +16,6 @@ Nestor.IndicatorView = SC.View.extend(
 /** @scope Nestor.IndicatorView.prototype */ {
   params: [],
   separationSpace: 50, // ideally this should depends on the user resolution. The default value will work on 1280x1024 and above
-
   createChildViews: function() {
     var value, valueBinding, labelWidth, fieldWidth,
         item, labelView, fieldView,
@@ -24,7 +23,13 @@ Nestor.IndicatorView = SC.View.extend(
         childViews = [],
         params = this.get('params'),
         length = params.length,
-        controller = 'Nestor.searchFilesController';
+        controller = 'Nestor.searchFilesController',
+        keyDownFunc = function(key) {
+          if (key.keyCode === 13) {
+              Nestor.searchFilesController.search();
+            } 
+            sc_super();
+        };
 
 
     for(i; i< length; i++) {
@@ -45,6 +50,8 @@ Nestor.IndicatorView = SC.View.extend(
       fieldWidth = item.fieldWidth || 100;
       fieldView = this.createChildView(
         SC.TextFieldView.design({
+          //TODO Is it the correct way to do it ?
+          keyDown: keyDownFunc,
           layout: {left: left, centerY:0, width: fieldWidth, height: 20},
           isEnabledBinding: SC.Binding.from('%@.searchMode'.fmt(controller)).oneWay(),
           valueBinding: SC.Binding.from('%@.%@'.fmt(controller, valueBinding))

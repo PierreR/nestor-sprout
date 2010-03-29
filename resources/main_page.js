@@ -49,8 +49,8 @@ Nestor.mainPage = SC.Page.design({
         Nestor.IndicatorView.design({
           params: [
             {label: '_reference', labelWidth: 75, fieldBinding: 'reference'}, 
-            {label: '_type', fieldBinding: 'contractType', fieldWidth:150 },
             {label: '_name', fieldBinding: 'name'},
+            {label: '_type', fieldBinding: 'contractType', fieldWidth:150 },
             {label: '_townShip', labelWidth: 80, fieldBinding: 'townShip'},
             {label: '_manager', labelWidth: 90, fieldBinding: 'managerName'}
           ]

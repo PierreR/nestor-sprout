@@ -18,5 +18,7 @@ Nestor.File = SC.Record.extend(
   reference: SC.Record.attr(String), // ref will be computed by the server 
   townShip: SC.Record.attr(String),
 	managerName: SC.Record.attr(String),
-	grantDate: SC.Record.attr(SC.DateTime)
+	grantDate: SC.Record.attr(SC.DateTime),
+
+  operations: SC.Record.toMany('Nestor.Operation', {isNested: YES}) 
 }) ;
