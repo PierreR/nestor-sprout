@@ -15,7 +15,7 @@
 Nestor.IndicatorView = SC.View.extend(
 /** @scope Nestor.IndicatorView.prototype */ {
   params: [],
-  separationSpace: 50, // ideally this should depends on the user resolution. The default value will work on 1280x1024 and above
+  separationSpace: 45, // ideally this should depends on the user resolution. The default value will work on 1280x1024 and above
   createChildViews: function() {
     var value, valueBinding, labelWidth, fieldWidth,
         item, labelView, fieldView,

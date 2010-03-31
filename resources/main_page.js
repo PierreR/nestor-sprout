@@ -38,7 +38,7 @@ Nestor.mainPage = SC.Page.design({
       }),
 
       rightView: SC.SegmentedView.design({
-        layout: { centerY: 0, width: 170, height: 24, right: 1 },
+        layout: { centerY: 0, width: 165, height: 24, right: 5 },
         items: 'NL Aide Quitter'.w()
       })
     }),
@@ -55,11 +55,18 @@ Nestor.mainPage = SC.Page.design({
             {label: '_manager', labelWidth: 90, fieldBinding: 'managerName'}
           ]
         }),
-        SC.ButtonView.design({
-          layout: {right: 10, width: 120, height:24, centerY:0 }, // buttons are not displayed without an height and width
-          displayTitle: "_search".loc(),
-          icon: static_url('images/search-32.png'),
-          action: 'searchFiles'
+        SC.LabelView.design(SCUI.SimpleButton, {
+          layout: {right: 60, width: 20, height:16, centerY:0 }, // buttons are not displayed without an height and width
+          icon: static_url('images/search-invert-32.png'),
+          hasHover: YES,
+          action: 'searchFiles',
+          toolTip: '_search'.loc()
+        }),
+        SC.LabelView.design(SCUI.SimpleButton, {
+          layout: {right: 20, width: 20, height:16, centerY:0 }, // buttons are not displayed without an height and width
+          icon: static_url('images/plus-invert-32.png'),
+          action: 'createFile',
+          toolTip: '_create'.loc()
         })
       ]
     }),

@@ -16,8 +16,7 @@ Nestor.main = function main() {
   Nestor.getPath('mainPage.mainPane').append() ;
   // Populate the left tree with static data
   Nestor.sourceProjectsController.refreshSources();
-  // GO into the search state
-  Nestor.makeFirstResponder(Nestor.SEARCH);
+  Nestor.makeFirstResponder(Nestor.START);
 } ;
 
 function main() { Nestor.main(); }

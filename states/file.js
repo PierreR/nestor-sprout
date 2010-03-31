@@ -11,8 +11,8 @@
   @extends SC.Responder
   @version 0.1
 */
-Nestor.SELECT = SC.Responder.create(
-/** @scope Nestor.SELECT.prototype */ {
+Nestor.FILE = SC.Responder.create(
+/** @scope Nestor.FILE.prototype */ {
 
   /**
     The next state to check if this state does not implement the action.
@@ -29,10 +29,13 @@ Nestor.SELECT = SC.Responder.create(
   // ..........................................................
   // EVENTS
   //
-  
-  // add event handlers here
+  openSelectedItem: function() {
+    if (this._searchController.hasSelection()) {
+      Nestor.makeFirstResponder(Nestor.OPERATION);
+    }
+  },
   searchFiles: function() {
-    Nestor.makeFirstResponder(Nestor.SEARCH);
+    Nestor.makeFirstResponder(Nestor.START);
   }
 
 }) ;

@@ -1,18 +1,19 @@
 // ==========================================================================
-// Project:   Nestor.SEARCH
+// Project:   Nestor.START
 // Copyright: ©2010 CIRB/CIBG
 // ==========================================================================
 /*globals Nestor */
 
 /** @class
 
-  The user is searching for a specific file.
+  Initial state of the application:
+    - the user is searching for a specific file.
 
   @extends SC.Responder
   @version 0.1
 */
-Nestor.SEARCH = SC.Responder.create(
-/** @scope Nestor.SEARCH.prototype */ {
+Nestor.START = SC.Responder.create(
+/** @scope Nestor.START.prototype */ {
 
   /**
     The next state to check if this state does not implement the action.
@@ -21,8 +22,8 @@ Nestor.SEARCH = SC.Responder.create(
   
   didBecomeFirstResponder: function() {
     this._setMiddleView("Nestor.searchFilePage.mainView");
-    this._controller.set('content', Nestor.store.find(Nestor.File)); 
-    this._controller.reset();
+    this._searchController.set('content', Nestor.store.find(Nestor.File)); 
+    this._searchController.reset();
   },
   
   willLoseFirstResponder: function() {    
@@ -33,11 +34,13 @@ Nestor.SEARCH = SC.Responder.create(
   // EVENTS
   //
   openSelectedItem: function() {
-    Nestor.makeFirstResponder(Nestor.SELECT);
+    if (this._searchController.hasSelection()) {
+      Nestor.makeFirstResponder(Nestor.FILE);
+    }
   },
   
   searchFiles: function() {
-    this._controller.search();
+    this._searchController.search();
   },
 
   _setMiddleView: function(value) {
@@ -45,5 +48,5 @@ Nestor.SEARCH = SC.Responder.create(
   },
 
   // Managed controller
-  _controller: Nestor.searchFilesController
+  _searchController: Nestor.searchFilesController
 }) ;
