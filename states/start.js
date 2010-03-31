@@ -21,13 +21,13 @@ Nestor.START = SC.Responder.create(
   nextResponder: null,
   
   didBecomeFirstResponder: function() {
-    this._setMiddleView("Nestor.searchFilePage.mainView");
+    this._setMiddleView();
     this._searchController.set('content', Nestor.store.find(Nestor.File)); 
     this._searchController.reset();
   },
   
   willLoseFirstResponder: function() {    
-    this._setMiddleView("Nestor.selectFilePage.mainView");
+    this._searchController.setCriteriaFields();
   },
   
   // ..........................................................
@@ -43,10 +43,11 @@ Nestor.START = SC.Responder.create(
     this._searchController.search();
   },
 
-  _setMiddleView: function(value) {
-    Nestor.mainPage.mainPane.middleView.set("nowShowing", value);
+  _setMiddleView: function() {
+    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.searchFilePage.mainView');
   },
 
   // Managed controller
   _searchController: Nestor.searchFilesController
+
 }) ;

@@ -71,8 +71,10 @@ Nestor.selectFilePage = SC.Page.create({
                 minWidth: 400
               })           
               ],
-              contentBinding: "Nestor.selectFileController.operations",
-              recordType: Nestor.Operation
+              contentBinding: "Nestor.operationsController.arrangedObjects",
+              selectionBinding: 'Nestor.operationsController.selection',
+              recordType: Nestor.Operation,
+              action: 'openSelectedItem'
             }) 
           })
         ]

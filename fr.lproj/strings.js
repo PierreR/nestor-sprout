@@ -25,6 +25,7 @@ SC.stringsFor('fr', {
   '_districtContract': "Contract de quartier",
 	'_elaboration': "Elaboration",
 	'_file': "Dossier",
+  '_financialData': "Données financières",
 	'_fulfillment': "Exécution",
 	'_grantDate': "Date d'octroi",
   '_isolatedBuilding': "Immeuble isolé",
@@ -38,8 +39,11 @@ SC.stringsFor('fr', {
 	'_project': "Project%@",
 	'_publicOperation': "Opération%@ publique%@",
   '_reference': "Référence",
+  '_regionalPart': "Part régionale",
 	'_search': "Rechercher",
   '_socialCohesion': "Cohésion sociale",
+  '_total': "Total",
   '_townShip': "Commmune",
+  '_townShipPart': "Part communale",
   '_type': "Type"
 	}) ;

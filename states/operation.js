@@ -1,18 +1,18 @@
 // ==========================================================================
-// Project:   Nestor.SELECT
+// Project:   Nestor.OPERATION
 // Copyright: ©2010 CIRB/CIBG
 // ==========================================================================
 /*globals Nestor */
 
 /** @class
-  
-  A file has been selected by the user.
+
+  An Operation has been selected.
 
   @extends SC.Responder
   @version 0.1
 */
-Nestor.FILE = SC.Responder.create(
-/** @scope Nestor.FILE.prototype */ {
+Nestor.OPERATION = SC.Responder.create(
+/** @scope Nestor.OPERATION.prototype */ {
 
   /**
     The next state to check if this state does not implement the action.
@@ -20,31 +20,25 @@ Nestor.FILE = SC.Responder.create(
   nextResponder: null,
   
   didBecomeFirstResponder: function() {
+    console.log('Operation is now the first responder');
     this._setMiddleView();
   },
   
   willLoseFirstResponder: function() {
+    // Called when this state loses first responder
   },
   
   // ..........................................................
   // EVENTS
   //
-  openSelectedItem: function() {
-    if (this._operationsController.hasSelection()) {
-      Nestor.makeFirstResponder(Nestor.OPERATION);
-    }
+  // add event handlers here
+  someAction: function() {
+    
   },
-
-  searchFiles: function() {
-    Nestor.makeFirstResponder(Nestor.START);
-  },
-
+   
   // Private attributes
   _setMiddleView: function() {
-    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.selectFilePage.mainView');
-  },
-
-  // Managed controllers
-  _operationsController: Nestor.operationsController
-
+    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.selectOperationPage.mainView');
+  }
+  
 }) ;
