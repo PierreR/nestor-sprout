@@ -33,6 +33,7 @@ Nestor.START = SC.Responder.create(
   // ..........................................................
   // EVENTS
   //
+
   openSelectedItem: function() {
     if (this._searchController.hasSelection()) {
       Nestor.makeFirstResponder(Nestor.FILE);

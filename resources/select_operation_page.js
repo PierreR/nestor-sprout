@@ -16,11 +16,17 @@ Nestor.selectOperationPage = SC.Page.create({
       backgroundColor: '#747E92',
     borderStyle: SC.BORDER_NONE,
     contentView: SC.View.design({
-      layout: { width: 1280, height: 780},
-      childViews: "financialData1".w(),
+      layout: { width: 1280, height: 700},
+      childViews: "financialData1 financialData2".w(),
       financialData1: SC.WellView.design({
         nowShowing: YES,
-        layout: {top: 5, left: 5, height: 200, width: 280} ,
+        layout: {top: 100, right: 5, height: 225, width: 280} ,
+        contentView: Nestor.FinancialDataView.design({
+        })
+      }),
+      financialData2: SC.WellView.design({
+        nowShowing: YES,
+        layout: {bottom: 5, right: 5, height: 225, width: 280} ,
         contentView: Nestor.FinancialDataView.design({
         })
       })

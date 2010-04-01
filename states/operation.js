@@ -31,12 +31,16 @@ Nestor.OPERATION = SC.Responder.create(
   // ..........................................................
   // EVENTS
   //
-  // add event handlers here
-  someAction: function() {
-    
-  },
+  showHomeScreen: function() {
+    Nestor.makeFirstResponder(Nestor.START);
+  },    
    
+  showFileScreen: function() {
+    Nestor.makeFirstResponder(Nestor.FILE);
+  },
+  //
   // Private attributes
+  //
   _setMiddleView: function() {
     Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.selectOperationPage.mainView');
   }

@@ -20,16 +20,22 @@ Nestor.mainPage = SC.Page.design({
 
     topBarView: SC.ToolbarView.design(SC.Border, {
       borderStyle: SC.BORDER_BOTTOM,
-      childViews: 'appNameView appVersionView middleView rightView'.w(),
+      childViews: 'logoView fileButton middleView rightView'.w(),
       anchorLocation: SC.ANCHOR_TOP,
-      appNameView: SC.LabelView.design({
-        layout: { left: 10, centerY: 0, width: 60, height: 24 },
-        fontWeight: SC.BOLD_WEIGHT,
-        value: Nestor.NAMESPACE.toUpperCase()
+      logoView: SC.ImageView.design(SCUI.SimpleButton, {
+        layout: { left: 5, centerY: 0, width: 156, height: 32 },
+        value: static_url('images/logo.png'),
+        action: 'showHomeScreen',
+        localize: YES,
+        toolTip: '_showHomeScreen'
       }),
-      appVersionView: SC.LabelView.design({
-        layout: { left: 75, centerY: 8, width: 40, height: 24 },
-        value: 'v%@'.fmt(Nestor.VERSION)
+      fileButton: SC.LabelView.design(SCUI.SimpleButton, {
+        layout: {left: 170, width: 20, height:17, centerY:0 }, // buttons are not displayed without an height and width
+        icon: static_url('images/file-invert-32.png'),
+        hasHover: YES,
+        action: 'showFileScreen',
+        isVisibleBinding: SC.Binding.from("Nestor.OPERATION.isFirstResponder").oneWay(),
+        toolTip: '_showFileScreen'.loc()
       }),
       middleView: SC.LabelView.design({
         layout: { centerY: 0, centerX:0, width: 220, height: 24 },
@@ -60,6 +66,7 @@ Nestor.mainPage = SC.Page.design({
           icon: static_url('images/search-invert-32.png'),
           hasHover: YES,
           action: 'searchFiles',
+          isVisibleBinding: SC.Binding.from("Nestor.START.isFirstResponder").oneWay(),
           toolTip: '_search'.loc()
         }),
         SC.LabelView.design(SCUI.SimpleButton, {
@@ -76,7 +83,13 @@ Nestor.mainPage = SC.Page.design({
     }),
 
     bottomBarView: SC.ToolbarView.design({
-      anchorLocation: SC.ANCHOR_BOTTOM
+      anchorLocation: SC.ANCHOR_BOTTOM,
+      childViews: [
+        SC.LabelView.design({
+          layout: {centerX: 0, width: 40, height: 24 },
+          value: 'v%@'.fmt(Nestor.VERSION)
+        })
+      ]
     })
 
   })

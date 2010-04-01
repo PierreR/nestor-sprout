@@ -29,6 +29,10 @@ Nestor.FILE = SC.Responder.create(
   // ..........................................................
   // EVENTS
   //
+  showHomeScreen: function() {
+    Nestor.makeFirstResponder(Nestor.START);
+  },
+  
   openSelectedItem: function() {
     if (this._operationsController.hasSelection()) {
       Nestor.makeFirstResponder(Nestor.OPERATION);
