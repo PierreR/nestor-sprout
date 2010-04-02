@@ -20,5 +20,6 @@ Nestor.File = SC.Record.extend(
 	managerName: SC.Record.attr(String),
 	grantDate: SC.Record.attr(SC.DateTime),
 
-  operations: SC.Record.toMany('Nestor.Operation', {isNested: YES}) 
+  operations: SC.Record.toMany('Nestor.Operation', {inverse: 'file', isMaster: YES}), 
+  planning: SC.Record.toMany('Nestor.Planning', {isNested: YES}) 
 }) ;

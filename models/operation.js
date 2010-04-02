@@ -15,6 +15,7 @@ Nestor.Operation = SC.Record.extend(
 /** @scope Nestor.Operation.prototype */ {
   number: SC.Record.attr(Number),
   name: SC.Record.attr(String),
-  description: SC.Record.attr(String)
+  description: SC.Record.attr(String),
+  file: SC.Record.toOne('Nestor.File', {inverse: 'operations', isMaster: NO})
   // project: SC.Record.toOne(Nestor.File)
 }) ;

@@ -17,7 +17,8 @@ Nestor.File.FIXTURES = [
     townShip: "Ixelles",
 		managerName: "John Doe",
 		grantDate: SC.DateTime.create(),
-    operations: [1, 2, 3]
+    operations: [1, 2, 3],
+    planning: {description: "Conseil Communal-ROI de la CLDI", date: SC.DateTime.create()}
 	},
 
 	{ 
