@@ -1,17 +1,21 @@
 // ==========================================================================
-// Project:   Nestor.selectOperationPage
+// Project:   Nestor.operationMPage
 // Copyright: ©2010 CIRB/CIGB
 // ==========================================================================
 /*globals Nestor */
 
 /** @class
 
-  This page displays all the information about a specific operation 
+  Page displayed in the Main area at operation state.
+  Details about a specific operation.
 
   @extends SC.Page
 */
-Nestor.selectOperationPage = SC.Page.create({
-  /** @scope Nestor.selectOperationPage.prototype */ 
+
+sc_require('views/financial_data');
+
+Nestor.operationMPage = SC.Page.create({
+  /** @scope Nestor.operationMPage.prototype */ 
   mainView: SC.ScrollView.design({
       backgroundColor: '#747E92',
     borderStyle: SC.BORDER_NONE,

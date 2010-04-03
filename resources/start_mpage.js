@@ -1,17 +1,18 @@
 // ==========================================================================
-// Project:   Nestor.SearchView
-// Copyright: ©2010 My Company, Inc.
+// Project:   Nestor.startMPage
+// Copyright: ©2010 CIRB/CIBG
 // ==========================================================================
 /*globals Nestor */
 
 /** @class
 
-  (Document Your View Here)
+  Page displayed in the Main area at the start state.
+  Search result page. 
 
   @extends SC.ScrollView
 */
-Nestor.searchFilePage = SC.Page.create({
-  /** @scope Nestor.SearchView.prototype */ 
+Nestor.startMPage = SC.Page.create({
+  /** @scope Nestor.startMPage.prototype */ 
   mainView:  SC.TableView.design({
      columns: [ 
        SC.TableColumn.create({

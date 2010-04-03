@@ -45,7 +45,7 @@ Nestor.FILE = SC.Responder.create(
 
   // Private attributes
   _setMiddleView: function() {
-    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.selectFilePage.mainView');
+    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.fileMPage.mainView');
   },
 
   // Managed controllers

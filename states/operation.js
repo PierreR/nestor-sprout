@@ -42,7 +42,7 @@ Nestor.OPERATION = SC.Responder.create(
   // Private attributes
   //
   _setMiddleView: function() {
-    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.selectOperationPage.mainView');
+    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.operationMPage.mainView');
   }
   
 }) ;

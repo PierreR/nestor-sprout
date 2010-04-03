@@ -23,7 +23,6 @@ Nestor.sourceProjectsController = SC.TreeController.create(
     var projectSources = SC.Object.create({
       treeItemIsExpanded: YES,
       displayName: '_project'.loc('s'),
-      page: 'projectPage',
       treeItemChildren: [
         SC.Object.create({
           treeItemIsExpanded: YES,
@@ -125,6 +124,7 @@ Nestor.sourceProjectsController = SC.TreeController.create(
 
     var fileDataSources = SC.Object.create({
       treeItemIsExpanded: NO,
+      page: 'detailCPage',
       displayName: '_administrativeData'.loc(),
       treeItemChildren: []
     });

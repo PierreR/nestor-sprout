@@ -5,23 +5,21 @@
 /*globals Nestor */
 
 /** @class
-
-  (Document Your Controller Here)
+  
+  Proxy to the selected item in the project tree. 
 
   @extends SC.Object
 */
 Nestor.middleContainerController = SC.ObjectController.create(
 /** @scope Nestor.middleContainerController.prototype */ {
-  content: 'null' // path to the view to display in the middle area
-  // contentBinding: 'Nestor.sourceProjectsController*selection',
-  // nowShowing: function() {
-  //   var content = this.get('content');
-  //   var page = content.getPath('firstObject.page');
-  //   if (page) {
-  //     return 'Nestor.%@.mainView'.fmt(content.getPath('firstObject.page'));
-  //   } else { 
-  //     return  'Nestor.searchFilePage.mainView';
-  //   }
-  // }.property('content').cacheable()
+  contentBinding: 'Nestor.sourceProjectsController*selection',
+  nowShowing: function() {
+    var page = this.get('page');
+    if (page) {
+      return 'Nestor.%@.mainView'.fmt(page);
+    } else { 
+      return  'Nestor.projectCPage.mainView';
+    }
+  }.property('page').cacheable()
 
 }) ;

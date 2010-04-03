@@ -45,7 +45,7 @@ Nestor.START = SC.Responder.create(
   },
 
   _setMiddleView: function() {
-    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.searchFilePage.mainView');
+    Nestor.mainPage.mainPane.middleView.set("nowShowing", 'Nestor.startMPage.mainView');
   },
 
   // Managed controller
