@@ -4,8 +4,6 @@
 // ==========================================================================
 /*globals Nestor */
 
-// sc_require('resources/search_page') ;
-
 Nestor.mainPage = SC.Page.design({
 
   // The main pane is made visible on screen as soon as your app is loaded.
