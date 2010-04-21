@@ -13,6 +13,8 @@ This is how I have installed Nestor:
 * mkdir frameworks
 * cd frameworks
 * git clone git://github.com/sproutit/sproutcore.git
+* cd ..
+* git clone git://github.com/etgryphon/sproutcore-ui.git scui
 * make a symlink toward abbot/bin in a dir included in your PATH
 * go to a place where you want to install Nestor
 * git clone git@github.com:PierreR/nestor-sprout.git nestor
