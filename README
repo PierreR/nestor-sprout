@@ -3,5 +3,16 @@ Project:   Nestor
 Copyright: ©2010 My Company, Inc.
 =============================================================================
 
-TODO: Describe Your Project
+This is how I have installed Nestor:
 
+* Install Ruby, sudo gem install sproutcore to get all the dependencies.
+* sudo gem uninstall sproutcore (looks stupid but well ...)
+* Go in a directory where you wish to install sproutcore from the master git branch.
+* git clone git://github.com/sproutit/sproutcore-abbot.git abbot
+* cd abbot
+* mkdir frameworks
+* cd frameworks
+* git clone git://github.com/sproutit/sproutcore.git
+* make a symlink toward abbot/bin in a dir included in your PATH
+* go to a place where you want to install Nestor
+* git clone git@github.com:PierreR/nestor-sprout.git nestor
