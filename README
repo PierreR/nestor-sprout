@@ -5,16 +5,14 @@ Copyright: ©2010 My Company, Inc.
 
 This is how I have installed Nestor:
 
-* Install Ruby, sudo gem install sproutcore to get all the dependencies.
-* sudo gem uninstall sproutcore (looks stupid but well ...)
-* Go in a directory where you wish to install sproutcore from the master git branch.
-* git clone git://github.com/sproutit/sproutcore-abbot.git abbot
-* cd abbot
-* mkdir frameworks
-* cd frameworks
-* git clone git://github.com/sproutit/sproutcore.git
-* cd ..
-* git clone git://github.com/etgryphon/sproutcore-ui.git scui
-* make a symlink toward abbot/bin in a dir included in your PATH
-* go to a place where you want to install Nestor
+* Install Ruby and ruby gem 
+* sudo gem install rack jeweler json_pure extlib erubis thor rspec
+* Go in a directory where you wish to install Nestor
 * git clone git@github.com:PierreR/nestor-sprout.git nestor
+* cd nestor
+* mkdir frameworks
+* git clone http://github.com/sproutit/sproutcore.git
+* git clone http://github.com/etgryphon/sproutcore-ui.git scui
+* Go in a directory where you wish to install abbot
+* git clone http://github.com/sproutit/sproutcore-abbot.git abbot
+* make a symlink toward abbot/bin in a dir included in your PATH
